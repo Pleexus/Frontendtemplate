@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+
+/* custom property */
+
+:root{
+    --leading: 2em;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+.hero-bg{
+    background: #307D99 url('../images/back.jpg');
+    background-position: 12% 83%;
+    color: white;
+    text-align: center;
+    padding-bottom: 4em;
+}
+header{
+    padding: 1em 0; /* top and bottom 1em gap */
+
+}
+.hero-bg a{
+    color: white;
+    text-decoration: none; /* remove hyperlink line*/
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+section{
+    margin: 0 1em; /* right and left 1em gap */
+}
+h1{
+    font-size: 2.5rem;
+    margin: 2 0 1.2em;
+}
+h1 span{
+    text-transform: uppercase;
+    display: block; /* own line*/
+    font-size: 1.4em;
+}
+h1 span::before {
+    content: ' ';
+    position: absolute; /* breaks the box model edit anywhere*/
+    width: 3em;
+    background: #00BFFF;
+    height: .4em;
+    bottom: 0;
+    z-index: -1; /*Behind the text*/
+    margin-left: -.3em;
+}
+.hero-bg p{
+    font-weight: bold;
+    margin: 0 1em 3em; /*1em is left and right 3em is bottom*/
+}
+.form-container{
+    background: white;
+    margin: 2em -1em 0;
+    padding: 2em ;
+}
+label {
+    color: #2D7D98;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+input[type=text]{
+    border: 1px solid #707070;
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box; /*line up*/
+    border-radius: .5em;
+    margin-top: 1.2em;
+}
+.form-container p{
+    color: gray;
+    margin-bottom: 1.5em;
+    font-weight: normal;
+    font-size: .9em;
+    margin-top: .3em ;
+}
+input[type=button]{
+    background-color: #F89104;
+    border: none;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    padding: 1em 0;
+    border-radius: .5em;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+input[type=button]:hover { /*color changes for button by hovering cursor*/
+    background-color: #e71f11;   
+}
+
+.authentic {
+    margin: 0;
+}
+
+.right-col {
+    text-align: center;
+    margin: 3em 1em;
+}
+
+h2 {
+    text-transform: uppercase;
+    position: relative;
+}
+
+h2::before {
+    content: ' ';
+    position: absolute; /* breaks the box model edit anywhere*/
+    width: 8em;
+    background: #00BFFF;
+    height: .4em;
+    bottom: 0;
+    z-index: -1; /*Behind the text*/
+    margin-left: -.3em;
+}
+
+img{
+    width: 100%;
+}
+
+p {
+    line-height: var(--leading);
+}
+
+.overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.9);
+    z-index: 1;
+    place-content: center;
+    color: white;
+    display: none;
+    opacity: 0;
+}
+
+.animate-overlay {
+    animation: overlay 3s forwards;
+}
+/* for anything above 730px x value */
+@media (min-width: 730px){
+    section{
+        margin: 0 4em; /* right and left 1em gap */
+    }
+    .form-container{
+        margin: 2em 4em 0;
+    }
+}
+
+/* for anything above 930px x value */
+@media (min-width: 930px){
+    .hero-bg{
+        text-align: left;
+    }
+    .hero-bg p{
+        margin: 0 0 3em;
+    }
+    .hero-bg section {
+        width: 65%;
+    }
+    .form-container {
+        margin: 2em 0 0;
+        padding: 2em;
+        border-radius: .5em;
+        box-shadow: 10px 10px 10px rgba(0,0,0,.3); /* x, y, blur ammount, color(0,0,0, opacity{transparent}) */
+    }
+
+    form {
+        display: flex;
+    }
+    .form-left {
+        width: 70%;
+    }
+    label{
+        margin: 0;
+    }
+    input[type="button"]{
+        height: fit-content; /* Fixes Large button issue */
+        font-size: 1.1em;
+        margin-left: 1em;
+        margin-top: 2.2em;
+        padding: .7em 0;
+        width: 30%
+    }
+    .hero-bg p{
+        margin-bottom: 0;
+    }
+    section.authentic{
+        display: grid; /*layout in rows and column*/
+        grid-template-columns: repeat(2, 50%); /* 2 columns  */
+        grid-template-areas: 
+            "bowl content"; /* name 2 columns*/
+    }
+    .right-col {
+        grid-area: content;  /*flips */
+        padding: 0 10%;
+        text-align: left;
+        align-self: center;
+    }
+
+    img {
+        grid-area: bowl; /*flips */
+    }
+
+    h2 {
+        margin: 0;
+    }
+}
+
+.top {
+    animation: fadeIn 2s forwards; /*2 sec animation done once! */
+}
+
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+        transform: translateY(-5em); /*from top*/
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes overlay{
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+
+}
+
+

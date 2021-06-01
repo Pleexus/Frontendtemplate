@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="overlay" id="overlay"> 
+        <h3> Searching Now..</h3>
+    </div>
+    <div class="hero-bg">
+        <section class="top">
+            <header>
+                <a href="#">SPADE Event Management Service
+
+                </a>
+            </header>
+            
+            <h1><span>The Ultimate</span> Event Manager</h1>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias molestiae doloremque impedit hic ab sit inventore ut, atque nostrum minima.</p>
+            
+            <div class="form-container">
+                <form action="">
+                    <div class="form-left">
+                    <label for="City">Enter your City:</label>
+                    <input type="text" name="city" id="City">
+                    <p>Example: "New Delhi"</p>
+                </div>
+
+                    <input type="button" value="Find City Now!" id="cta-btn">
+        
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <section class="authentic">
+        <div class="right-col">
+            <h2>Authentic. Fast. Reliable</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi explicabo maxime repellendus rem amet aperiam quia ut fugiat sapiente cupiditate.</p>
+        </div>
+        <img src="images/charles-deluvio-D-vDQMTfAAU-unsplash.jpg" alt="Logo of SPADE">
+    </section>
+
+    <script>
+        let btn = document.getElementById('cta-btn'); /*listen */
+        let overlay = document.getElementById('overlay');
+        btn.addEventListener('click', () => {
+            overlay.style.display = 'grid';
+            overlay.classList.add('animate-overlay');
+        })
+    </script>
+</body>
+</html>
