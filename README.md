@@ -5,4 +5,4 @@ This is a front end website template
 
 # Author
 Prajwal Bisht
-@pleexus
+@Pleexus
