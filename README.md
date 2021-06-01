@@ -5,4 +5,5 @@ This is a front end website template
 
 # Author
 Prajwal Bisht
-@Pleexus
+
+[@Pleexus](https://github.com/Pleexus)
